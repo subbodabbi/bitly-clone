@@ -1,15 +1,27 @@
-<form action="/urls" method ="post">
-  Enter URL:
-  <input type= "text" name="url[long_url]">
-  <input type="submit" value="Submit">
-</form>
+<div class= form>
+  <form action="/urls" method ="post">
+    <input id="search" type= "text" placeholder="Give us a URL!" name="url[long_url]">
+    <input id="button" type="submit" value="Submit">
+    <p id="shortened"> Shortened link appears here! </p>
+  </form>
+</div>
 
 
-<table>
-  <% @urls.each do |url| %>
-    <tr>
-    <td><%= url.long_url %></td>
-    <td><%= url.short_url %></td>
-    <td><%= url.click_count %></td>
-  <% end %>
-</table>
+<div class= table>
+  <table>
+    <div id=header>
+      <tr>
+        <th><%= "Original URL" %></td>
+        <th><%= "Short URL" %></td>
+        <th><%= "Click Count" %></td>&emsp;
+      </tr>
+    </div>
+    <% @urls.each do |url| %>
+      <tr>
+        <td><%= url.long_url %></td>
+        <td><a href=<%= url.short_url %>><%= "http://localhost:9393/" + url.short_url %></a></td>
+        <td><%= url.click_count %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>

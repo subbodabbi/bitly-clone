@@ -1,6 +1,6 @@
 
 get '/' do
-  @urls = Url.all
+  @urls = Url.last(10)
   @title = "Hi"
   erb :"static/index"
 end
@@ -8,13 +8,9 @@ end
 
 post '/urls' do
   @url = Url.new( params["url"])
-  if @url.save
-  	redirect to ('/')
-  else
-    @urls = Url.last(2)
-    @title = "Form"
-    erb :"static/index"
-  end
+  @url.save
+  redirect to ('/')
+  @url.short_url
 end
 
 get "/:short_url" do
