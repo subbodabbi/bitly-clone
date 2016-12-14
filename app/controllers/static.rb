@@ -1,6 +1,3 @@
-require 'sinatra/base'
-require 'sinatra/flash'
-
 get '/' do
   @urls = Url.last(10)
   erb :"static/index"
