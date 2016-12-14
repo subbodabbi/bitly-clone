@@ -7,15 +7,15 @@
 </div>
 
 
-<div class= table>
-  <table>
-    <div id=header>
-      <tr>
-        <th><%= "Original URL" %></td>
-        <th><%= "Short URL" %></td>
-        <th><%= "Click Count" %></td>&emsp;
-      </tr>
-    </div>
+<table class= table>
+  <thead>
+    <tr>
+      <th><%= "Original URL" %></td>
+      <th><%= "Short URL" %></td>
+      <th><%= "Click Count" %></td>&emsp;
+    </tr>
+  </thead>
+  <tbody>
     <% @urls.each do |url| %>
       <tr>
         <td><%= url.long_url %></td>
@@ -23,5 +23,5 @@
         <td><%= url.click_count %></td>
       </tr>
     <% end %>
-  </table>
-</div>
+  </tbody>
+</table>

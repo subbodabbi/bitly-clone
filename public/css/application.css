@@ -49,13 +49,14 @@ form {
 }
 
 #shortened {
-	float: right;
-	height:36px;
-	line-height:36px;
-	margin-right:12px;
-	outline:medium none;
-	padding:0 0 0 35px;
-	width:385px;
+  font-family: arial;
+  font-size: 200%;
+  margin: 0;
+  padding: 6px 0px 6px 0px;
+  font-size: 36px;
+  line-height: 44px;
+  letter-spacing: -2px;
+  font-weight: bold;
 }
 
 #button{

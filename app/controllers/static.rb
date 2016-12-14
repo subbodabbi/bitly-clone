@@ -1,16 +1,17 @@
+require 'sinatra/base'
+require 'sinatra/flash'
 
 get '/' do
   @urls = Url.last(10)
-  @title = "Hi"
   erb :"static/index"
 end
 
 
 post '/urls' do
-  @url = Url.new( params["url"])
-  @url.save
-  redirect to ('/')
-  @url.short_url
+  x = Url.new( params["url"])
+  x.save
+  @urls = Url.last(10)
+  x.to_json
 end
 
 get "/:short_url" do
